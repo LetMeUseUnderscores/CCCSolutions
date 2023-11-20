@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CCC10J5 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Scanner sc = new Scanner(System.in);
 		int rStart = sc.nextInt()-1;
 		int cStart = sc.nextInt()-1;

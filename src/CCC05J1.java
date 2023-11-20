@@ -1,44 +1,43 @@
 import java.util.*;
 import java.io.*;
 public class CCC05J1 {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int day = sc.nextInt();
+		int evening = sc.nextInt();
+		int weekend = sc.nextInt();
+		int dayA = 0;
+		if(day - 100 > 0) {
+			dayA = (day - 100) * 25;
+		} else {
+			dayA = 0;
+		}
+		int eveningA = evening * 15;
+		int weekendA = weekend * 20;
+		double totalA = dayA + weekendA + eveningA;
+		totalA /= 100;
 
-Scanner sc = new Scanner(System.in);
-int day = sc.nextInt();
-int even = sc.nextInt();
-int weekend = sc.nextInt();
+		int dayB = 0;
+		if(day - 250 > 0) {
+			dayB = (day - 250) * 45;
+		} else {
+			dayB = 0;
+		}
+		int eveningB = evening * 35;
+		int weekendB = weekend * 25;
 
-int pA = (day - 100)*25 + even*15 + weekend*20;
-
-if (day <= 100) {
-	pA = even*15 + weekend*20;
-}
-
-int pB = (day - 250)*45 + even*35 + weekend*25;
-
-if (day <= 250) {
-	pB = even*35 + weekend*25;
-}
-
-System.out.println("Plan A costs " + pA/100.0);
-System.out.println("Plan B costs " + pB/100.0);
-
-if (pA < pB) {
-	System.out.println("Plan A is cheapest.");
-	
-} else if (pA>pB) {
-	System.out.println("Plan B is cheapest");
-} else {
-	System.out.println("Plan A and B are the same price.");
-}
-		
-		
-		
-		
-		
-		
+		double totalB = dayB + weekendB + eveningB;
+		totalB /= 100;
+		System.out.print("Plan A costs ");
+		System.out.printf("%.2f\n", totalA);
+		System.out.print("Plan B costs ");
+		System.out.printf("%.2f\n", totalB);
+		if(totalA < totalB) {
+			System.out.println("Plan A is cheapest.");
+		} else if (totalA > totalB) {
+			System.out.println("Plan B is cheapest.");
+		} else {
+			System.out.println("Plan A and B are the same price.");
+		}
 	}
-
 }

@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class CCC09J2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		Scanner sc = new Scanner(System.in);
 		int trout = sc.nextInt();
 		int pike = sc.nextInt();
