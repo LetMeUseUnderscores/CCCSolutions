@@ -1,54 +1,52 @@
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class CCC14S3 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
-		for(int j = 0; j < T; j++) {
-			LinkedList<Integer> A = new LinkedList<Integer>();
-			LinkedList<Integer> branch = new LinkedList<Integer>();	
-			int lake = 1;
+		for(int i = 0; i < T; i++) {
 			int N = sc.nextInt();
-			for(int i = 0; i < N; i++) {
-				A.add(sc.nextInt());
+			Stack<Integer> top = new Stack<Integer>();
+			Stack<Integer> branch = new Stack<Integer>();
+			for(int j = 0; j < N; j++) {
+				top.push(sc.nextInt());
 			}
-			for(int i = A.size()-1; i>=0;i --) {
-				if(A.get(A.size()-1) == lake) {
-					A.remove(A.size()-1);
+			int lake = 1;
+			while(!top.isEmpty()) {
+				if(top.peek() == lake) {
+					top.pop();
 					lake++;
-				} else if (branch.size() > 0) {
-					if(branch.get(branch.size()-1) == lake) {
-						branch.remove(branch.size()-1);
+				} else if(branch.size() > 0) {
+					if(branch.peek() == lake) {
+						branch.pop();
 						lake++;
 					} else {
-						branch.add(A.get(A.size()-1));
-						A.remove(A.size()-1);
+						branch.push(top.peek());
+						top.pop();
 					}
 				} else {
-					branch.add(A.get(A.size()-1));
-					A.remove(A.size()-1);
+					branch.push(top.peek());
+					top.pop();
 				}
 			}
-			boolean isYum = true;
-			for(int i = 0; i < branch.size();i++) {
-				if(branch.get(branch.size()-1) == lake) {
-					branch.remove(branch.size()-1);
+			boolean isY = true;
+			for(int j = 0; j < branch.size(); j++) {
+				if(branch.peek() == lake) {
+					branch.pop();
 					lake++;
 				} else {
-					isYum = false;
+					isY = false;
 					break;
 				}
 			}
-			
-			if(isYum) {
+			if(isY) {
 				System.out.println("Y");
-			} else { 
+			} else {
 				System.out.println("N");
 			}
 		}
-		
 	}
 }
