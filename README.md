@@ -1,2 +1,2 @@
 # CCCSolutions
-Solutions to the CCC
+Java solutions to the CCC
