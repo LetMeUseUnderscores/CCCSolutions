@@ -7,21 +7,21 @@ public class CCC05S2 {
         int r = sc.nextInt();
         int startX = 0;
         int startY = 0;
-        while(true) {
+        while (true) {
             int a = sc.nextInt();
             int b = sc.nextInt();
-            if(a == 0 && b == 0) {
+            if (a == 0 && b == 0) {
                 break;
             }
             startX += a;
-            if(startX > c) {
+            if (startX > c) {
                 startX = c;
             } else if (startX < 0) {
                 startX = 0;
             }
 
             startY += b;
-            if(startY > r) {
+            if (startY > r) {
                 startY = r;
             } else if (startY < 0) {
                 startY = 0;

@@ -25,7 +25,7 @@ public class CCC07J5 {
         motelLocations.add(6010);
         motelLocations.add(7000);
 
-        for(int i = 0; i < addMotels; i++) {
+        for (int i = 0; i < addMotels; i++) {
             motelLocations.add(sc.nextInt());
         }
         Collections.sort(motelLocations);

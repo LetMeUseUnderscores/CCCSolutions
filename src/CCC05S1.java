@@ -34,16 +34,16 @@ public class CCC05S1 {
         keys.put('Z', 9);
         int N = sc.nextInt();
         String output = "";
-        for(int i = 0; i < N; i++) {
+        for (int i = 0; i < N; i++) {
             String S = sc.next();
             S = S.replace("-", "");
-            for(int j = 0; j < 10; j++) {
-                if("QWERTYUIOPASDFGHJKLZXCVBNM".contains(S.charAt(j) + "")) {
+            for (int j = 0; j < 10; j++) {
+                if ("QWERTYUIOPASDFGHJKLZXCVBNM".contains(S.charAt(j) + "")) {
                     output += keys.get(S.charAt(j));
                 } else {
                     output += S.charAt(j);
                 }
-                if(output.length() == 3 || output.length() == 7) {
+                if (output.length() == 3 || output.length() == 7) {
                     output += "-";
                 }
             }
