@@ -6,35 +6,35 @@ import java.util.Scanner;
 public class CCC07J5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int minDistance = sc.nextInt();
-        int maxDistance = sc.nextInt();
-        int addMotels = sc.nextInt();
-        List<Integer> motelLocations = new ArrayList<>();
-        motelLocations.add(0);
-        motelLocations.add(990);
-        motelLocations.add(1010);
-        motelLocations.add(1970);
-        motelLocations.add(2030);
-        motelLocations.add(2940);
-        motelLocations.add(3060);
-        motelLocations.add(3930);
-        motelLocations.add(4060);
-        motelLocations.add(4970);
-        motelLocations.add(5030);
-        motelLocations.add(5990);
-        motelLocations.add(6010);
-        motelLocations.add(7000);
+        long minDistance = sc.nextInt();
+        long maxDistance = sc.nextInt();
+        long addMotels = sc.nextInt();
+        List<Long> motelLocations = new ArrayList<>();
+        motelLocations.add(0L);
+        motelLocations.add(990L);
+        motelLocations.add(1010L);
+        motelLocations.add(1970L);
+        motelLocations.add(2030L);
+        motelLocations.add(2940L);
+        motelLocations.add(3060L);
+        motelLocations.add(3930L);
+        motelLocations.add(4060L);
+        motelLocations.add(4970L);
+        motelLocations.add(5030L);
+        motelLocations.add(5990L);
+        motelLocations.add(6010L);
+        motelLocations.add(7000L);
 
         for (int i = 0; i < addMotels; i++) {
-            motelLocations.add(sc.nextInt());
+            motelLocations.add(sc.nextLong());
         }
         Collections.sort(motelLocations);
 
-        int[] dp = new int[motelLocations.size()];
+        long[] dp = new long[motelLocations.size()];
         dp[0] = 1;
         for (int i = 1; i < motelLocations.size(); i++) {
             for (int j = 0; j < i; j++) {
-                int distance = motelLocations.get(i) - motelLocations.get(j);
+                long distance = motelLocations.get(i) - motelLocations.get(j);
                 if (distance >= minDistance && distance <= maxDistance) {
                     dp[i] += dp[j];
                 }
